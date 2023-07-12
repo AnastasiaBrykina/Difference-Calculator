@@ -1,0 +1,20 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "[![Actions Status](https://github.com/AnastasiaBrykina/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/AnastasiaBrykina/frontend-project-46/actions)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anastasia Brykina",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
+}
