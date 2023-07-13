@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "type": "module",
   "description": "[![Actions Status](https://github.com/AnastasiaBrykina/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/AnastasiaBrykina/frontend-project-46/actions)",
-  "main": "index.js",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "main": "gendiff.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Anastasia Brykina",
   "license": "ISC",
   "dependencies": {
-    "commander": "^11.0.0"
+    "commander": "^11.0.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^8.44.0",
