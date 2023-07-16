@@ -16,12 +16,23 @@ const parseContent = (content, type) => {
   return result;
 };
 
-const findDiff = (path1, path2) => {
+const readFile = (pathToFile) => {
+  let content;
+  try {
+    content = fs.readFileSync(pathToFile, 'utf8');
+  } catch {
+    throw new Error('path non-exist');
+  }
+
+  return content;
+};
+
+const genDiff = (path1, path2) => {
   const absolutePath1 = path.resolve(path1);
   const absolutePath2 = path.resolve(path2);
 
-  const contentFile1 = fs.readFileSync(path.resolve(path1), 'utf8');
-  const contentFile2 = fs.readFileSync(path.resolve(path2), 'utf8');
+  const contentFile1 = readFile(absolutePath1);
+  const contentFile2 = readFile(absolutePath2);
 
   const data1 = parseContent(contentFile1, path.extname(absolutePath1));
   const data2 = parseContent(contentFile2, path.extname(absolutePath2));
@@ -47,4 +58,4 @@ const findDiff = (path1, path2) => {
   return result;
 };
 
-export default findDiff;
+export default genDiff;

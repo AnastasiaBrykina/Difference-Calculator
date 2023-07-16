@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import findDiff from '../src/index.js';
-
-const genDiff = (path1, path2) => findDiff(path1, path2);
+import genDiff from '../src/index.js';
 
 program
   .name('gendiff')
@@ -13,9 +11,7 @@ program
   .argument('<filepath2>')
   .option('-f, --format <type>', 'output format')
   .action((filepath1, filepath2) => {
-    genDiff(filepath1, filepath2);
+    console.log(genDiff(filepath1, filepath2));
   });
 
 program.parse();
-
-export default genDiff;
