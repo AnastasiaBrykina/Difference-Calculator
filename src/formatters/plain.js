@@ -27,7 +27,7 @@ const plainFormatter = (tree) => {
           const { children } = item;
           return iter(children, [...path, key]);
         }
-      
+
         const {
           status, value, from, to,
         } = item;
