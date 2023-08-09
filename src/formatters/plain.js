@@ -15,12 +15,6 @@ const updateValue = (value) => {
 };
 
 const plainFormatter = (tree) => {
-  const data = {
-    added: 'was added with value:',
-    deleted: 'was removed',
-    changed: 'was updated.',
-  };
-
   const iter = (node, path) => {
     const lines = node
       .filter((item) => {
@@ -33,7 +27,7 @@ const plainFormatter = (tree) => {
           const { children } = item;
           return iter(children, [...path, key]);
         }
-
+      
         const {
           status, value, from, to,
         } = item;
@@ -41,14 +35,14 @@ const plainFormatter = (tree) => {
         const joinPath = [...path, key].join('.');
 
         if (status === 'added') {
-          return `Property '${joinPath}' ${data[status]} ${updateValue(value)}`;
+          return `Property '${joinPath}' was added with value: ${updateValue(value)}`;
         }
 
         if (status === 'deleted') {
-          return `Property '${joinPath}' ${data[status]}`;
+          return `Property '${joinPath}' was removed`;
         }
 
-        return `Property '${joinPath}' ${data[status]} From ${updateValue(from)} to ${updateValue(to)}`;
+        return `Property '${joinPath}' was updated. From ${updateValue(from)} to ${updateValue(to)}`;
       });
 
     return [...lines].join('\n');
