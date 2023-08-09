@@ -48,9 +48,7 @@ const plainFormatter = (tree) => {
     return [...lines].join('\n');
   };
 
-  const result = iter(tree, []);
-
-  return result;
+  return iter(tree, []);
 };
 
 export default plainFormatter;

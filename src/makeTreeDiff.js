@@ -1,16 +1,9 @@
 import _ from 'lodash';
 
 const makeTreeDiff = (data1, data2) => {
-  const keys = _.union(Object.keys(data1), Object.keys(data2));
-  const sortKeys = _.sortBy(keys, (key) => key);
-
+  const sortKeys = _.sortBy(_.union(Object.keys(data1), Object.keys(data2)), (key) => key);
   const tree = sortKeys.map((key) => {
-    if (
-      Object.hasOwn(data1, key)
-      && Object.hasOwn(data2, key)
-      && typeof data1[key] === 'object'
-      && typeof data2[key] === 'object'
-    ) {
+    if (typeof data1[key] === 'object' && typeof data2[key] === 'object') {
       return { key, children: makeTreeDiff(data1[key], data2[key]) };
     }
 
