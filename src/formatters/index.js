@@ -10,7 +10,7 @@ const formatSelectioner = (diffTree, format) => {
     case 'json':
       return JSON.stringify(diffTree);
     default:
-      throw new Error('Unknown format');
+      throw new Error(`Unknown format ${format}`);
   }
 };
 

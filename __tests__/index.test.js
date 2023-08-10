@@ -14,6 +14,7 @@ test('existing path-json', () => {
   const path2 = getFixturePath('recFile2.json');
   expect(genDiff(path1, path2)).toEqual(expectedStylishResult);
   expect(genDiff(path1, path2, 'plain')).toEqual(expectedPlainResult);
+  expect(() => { genDiff(path1, path2, 'unknownFormat'); }).toThrow('Unknown format unknownFormat');
 });
 
 test('existing path-yml', () => {
