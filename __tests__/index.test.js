@@ -19,7 +19,7 @@ test('existing path-json', () => {
 
 test('existing path-yml', () => {
   const path1 = getFixturePath('recFile1.yml');
-  const path2 = getFixturePath('recFile2.yml');
+  const path2 = getFixturePath('recFile2.yaml');
   expect(genDiff(path1, path2)).toEqual(expectedStylishResult);
   expect(genDiff(path1, path2, 'plain')).toEqual(expectedPlainResult);
 });
