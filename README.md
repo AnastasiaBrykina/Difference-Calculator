@@ -5,6 +5,33 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/70169c50c9e0f1a9214d/maintainability)](https://codeclimate.com/github/AnastasiaBrykina/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/70169c50c9e0f1a9214d/test_coverage)](https://codeclimate.com/github/AnastasiaBrykina/frontend-project-46/test_coverage)
 
+## Install:
+```
+git clone git@github.com:AnastasiaBrykina/frontend-project-46.git
+```
+```
+cd /frontend-project-46
+```
+```
+make install
+```
+## Possibilities:
+* Support for different formats: yaml, json
+* Report generation in the form of plain text, stylish and json
+
+## Usage example:
+* stylish format
+```
+gendiff path/to/file.yml another/path/file.json
+```
+* plain format
+```
+gendiff --format plain file.yml file.json
+```
+* json format
+```
+gendiff --format json file.yml file.json
+```
 ## Asciinema: Compares flat JSON files
 [![asciicast](https://asciinema.org/a/G2gMtdSTqBC0lsXb8GJYu1Zrw.svg)](https://asciinema.org/a/G2gMtdSTqBC0lsXb8GJYu1Zrw)
 
