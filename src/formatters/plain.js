@@ -36,9 +36,9 @@ const plainFormatter = (tree) => {
 
         switch (status) {
           case STATUS.added:
-            return `Property '${joinPath}' was added with value: ${updateValue(value)}`;;
+            return `Property '${joinPath}' was added with value: ${updateValue(value)}`;
           case STATUS.deleted:
-            return `Property '${joinPath}' was removed`;;
+            return `Property '${joinPath}' was removed`;
           default:
             return `Property '${joinPath}' was updated. From ${updateValue(from)} to ${updateValue(to)}`;
         }
