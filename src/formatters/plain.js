@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { STATUS } from '../constants.js';
 
 const updateValue = (value) => {
   const type = typeof value;
@@ -19,7 +20,7 @@ const plainFormatter = (tree) => {
     const lines = node
       .filter((item) => {
         const { status } = item;
-        return status !== 'unchanged';
+        return status !== STATUS.unchanged;
       })
       .map((item) => {
         const { key } = item;
@@ -31,18 +32,16 @@ const plainFormatter = (tree) => {
         const {
           status, value, from, to,
         } = item;
-
         const joinPath = [...path, key].join('.');
 
-        if (status === 'added') {
-          return `Property '${joinPath}' was added with value: ${updateValue(value)}`;
+        switch (status) {
+          case STATUS.added:
+            return `Property '${joinPath}' was added with value: ${updateValue(value)}`;;
+          case STATUS.deleted:
+            return `Property '${joinPath}' was removed`;;
+          default:
+            return `Property '${joinPath}' was updated. From ${updateValue(from)} to ${updateValue(to)}`;
         }
-
-        if (status === 'deleted') {
-          return `Property '${joinPath}' was removed`;
-        }
-
-        return `Property '${joinPath}' was updated. From ${updateValue(from)} to ${updateValue(to)}`;
       });
 
     return [...lines].join('\n');
