@@ -9,7 +9,7 @@
 
 ## Install:
 ```
-git clone git@github.com:AnastasiaBrykina/frontend-project-46.git
+git clone git@github.com:AnastasiaBrykina/Difference-Calculator.git
 ```
 ```
 cd /frontend-project-46
